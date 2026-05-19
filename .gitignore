@@ -1,0 +1,41 @@
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Claude Code локальные настройки
+.claude/
+
+# Локальные SFTP-конфиги (содержат пароли)
+.sftp-config*
+sftp.json
+ftp-config.json
+
+# Снимки боевого сайта — большие и не нужны в репо
+_backups/
+_legacy/uploads/
+_legacy/data/
+
+# Локальные дампы БД для разработки
+data/*.sqlite
+data/*.sqlite-journal
+data/logs/
+
+# Локальный конфиг с секретами
+app/config.local.php
+.env
+.env.local
+
+# Загруженные пользователем файлы — не коммитим пользовательский контент
+uploads/documents/*
+uploads/news/*
+uploads/pages/*
+!uploads/documents/.gitkeep
+!uploads/news/.gitkeep
+!uploads/pages/.gitkeep
+
+# Временные файлы PHP
+*.log
+*.tmp

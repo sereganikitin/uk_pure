@@ -1,0 +1,13 @@
+# Папка для пользовательских файлов (документы, картинки новостей).
+# Запрещаем исполнение любого серверного кода — даже если кто-то загрузит .php
+
+<FilesMatch "\.(php|phtml|phps|php3|php4|php5|php7|php8|pl|py|jsp|asp|aspx|sh|cgi|htaccess|ini)$">
+    Require all denied
+</FilesMatch>
+
+php_flag engine off
+Options -ExecCGI
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .php8
+
+# Не отдавать список файлов через autoindex
+Options -Indexes
