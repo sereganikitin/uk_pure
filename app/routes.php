@@ -25,3 +25,5 @@ Router::get('/news/{slug}', function (string $slug) {
 });
 
 Router::post('/contacts/send', 'feedback@feedback_submit');
+
+Router::get('/sitemap.xml', 'sitemap@sitemap_xml');

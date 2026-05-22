@@ -1,0 +1,18 @@
+# Pure Home Comfort — управляющая компания.
+# Сайт открыт для индексации всеми поисковиками.
+
+User-agent: *
+Allow: /
+
+# Закрытые служебные разделы
+Disallow: /admin
+Disallow: /admin/
+Disallow: /app/
+Disallow: /data/
+Disallow: /contacts/send
+
+# Карта сайта
+Sitemap: https://purehome.ru/sitemap.xml
+
+# Основной хост (Яндекс)
+Host: purehome.ru

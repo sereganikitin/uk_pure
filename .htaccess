@@ -53,4 +53,17 @@ DirectoryIndex index.php index.html
 </IfModule>
 
 # 404 контролирует front controller внутри маршрутизатора.
-# Не задаём ErrorDocument с абсолютным /index.php — в подпапке это смотрело бы на корень домена.
+
+# 301-редиректы со старых URL (Nicepage HTML-страниц) на новые.
+# Активируются только когда сайт в корне (на /_new/ старых URL и так нет).
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^index\.html$        / [R=301,L]
+    RewriteRule ^about\.html$        /about [R=301,L]
+    RewriteRule ^services\.html$     /services [R=301,L]
+    RewriteRule ^documents\.html$    /documents [R=301,L]
+    RewriteRule ^report\.html$       /documents [R=301,L]
+    RewriteRule ^news\.html$         /news [R=301,L]
+    RewriteRule ^contacts\.html$     /contacts [R=301,L]
+    RewriteRule ^feed-back\.html$    /contacts [R=301,L]
+</IfModule>
