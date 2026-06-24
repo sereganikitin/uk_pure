@@ -66,3 +66,9 @@ $lk       = Settings::get('lk_url');
         </div>
     </div>
 </section>
+
+<section class="section section--surface">
+    <div class="container">
+        <?php require APP . '/views/partials/requisites.php'; ?>
+    </div>
+</section>

@@ -7,6 +7,7 @@ Router::get('/services',  function () { layout('pages/services',  ['title' => '�
 Router::get('/documents', function () { layout('pages/documents', ['title' => 'Документы · ' . SITE_NAME]); });
 Router::get('/news',      function () { layout('pages/news',      ['title' => 'Новости · ' . SITE_NAME]); });
 Router::get('/contacts',  function () { layout('pages/contacts',  ['title' => 'Контакты · ' . SITE_NAME]); });
+Router::get('/privacy',   function () { layout('pages/privacy',   ['title' => 'Политика обработки персональных данных · ' . SITE_NAME, 'description' => 'Политика в отношении обработки персональных данных ' . LEGAL_OPERATOR]); });
 
 Router::get('/news/{slug}', function (string $slug) {
     $news = DB::fetch(

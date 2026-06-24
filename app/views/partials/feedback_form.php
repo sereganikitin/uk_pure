@@ -63,9 +63,21 @@ $val = static fn(string $field) => e($old[$field] ?? '');
             <div class="form__hint">Минимум 5 символов. Не публикуем персональные данные третьих лиц.</div>
         </div>
 
+        <div class="form__row form__consent">
+            <label class="form__check">
+                <input type="checkbox" name="consent" value="1" required
+                       class="form__check-input<?= isset($errors['consent']) ? ' form__check-input--error' : '' ?>">
+                <span class="form__check-text">
+                    Я&nbsp;даю согласие на&nbsp;обработку моих персональных данных и&nbsp;принимаю
+                    <a href="<?= url('privacy') ?>" target="_blank" rel="noopener">политику обработки персональных данных</a>.
+                    <span class="form__req">*</span>
+                </span>
+            </label>
+            <?php if (isset($errors['consent'])): ?><div class="form__error"><?= e($errors['consent']) ?></div><?php endif; ?>
+        </div>
+
         <div class="form__actions">
             <button type="submit" class="btn btn--primary">Отправить</button>
-            <span class="form__legal">Нажимая «Отправить», вы соглашаетесь на обработку персональных данных.</span>
         </div>
     </form>
 </div>

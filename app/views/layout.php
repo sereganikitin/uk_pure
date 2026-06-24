@@ -17,5 +17,31 @@
 </main>
 
 <?php require APP . '/views/partials/footer.php'; ?>
+
+<div class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-live="polite"
+     aria-label="Уведомление об использовании файлов cookie">
+    <p class="cookie-banner__text">
+        Мы&nbsp;используем файлы cookie, чтобы сайт работал корректно и&nbsp;удобно.
+        Продолжая пользоваться сайтом, вы&nbsp;соглашаетесь с&nbsp;их&nbsp;использованием и&nbsp;с&nbsp;нашей
+        <a href="<?= url('privacy') ?>">политикой обработки персональных данных</a>.
+    </p>
+    <button type="button" class="btn btn--primary cookie-banner__btn" id="cookie-accept">Принять</button>
+</div>
+<script>
+(function () {
+    var KEY = 'ph_cookie_consent';
+    var banner = document.getElementById('cookie-banner');
+    var btn = document.getElementById('cookie-accept');
+    if (!banner || !btn) return;
+    var stored;
+    try { stored = localStorage.getItem(KEY); } catch (e) { stored = '1'; }
+    if (stored === '1') return;
+    banner.hidden = false;
+    btn.addEventListener('click', function () {
+        try { localStorage.setItem(KEY, '1'); } catch (e) {}
+        banner.hidden = true;
+    });
+})();
+</script>
 </body>
 </html>

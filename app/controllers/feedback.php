@@ -29,6 +29,10 @@ function feedback_submit(): void
     $errors = SpamGuard::validate([
         'name' => $name, 'phone' => $phone, 'email' => $email, 'message' => $message,
     ]);
+    // Согласие на обработку ПДн — обязательная отметка (152-ФЗ).
+    if (!isset($_POST['consent']) || (string)$_POST['consent'] === '') {
+        $errors['consent'] = 'Необходимо согласие на обработку персональных данных.';
+    }
     if ($errors) {
         $_SESSION['feedback_error']  = 'Проверьте корректность заполнения полей.';
         $_SESSION['feedback_errors'] = $errors;

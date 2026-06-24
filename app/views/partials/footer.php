@@ -51,7 +51,8 @@
         </div>
 
         <div class="footer__bottom">
-            <span>© <?= date('Y') ?> <?= e(SITE_NAME) ?>. Все права защищены.</span>
+            <span>© <?= date('Y') ?> <?= e(LEGAL_OPERATOR) ?>. Все права защищены.</span>
+            <a href="<?= url('privacy') ?>" class="footer__legal-link">Политика обработки персональных данных</a>
         </div>
     </div>
 </footer>
